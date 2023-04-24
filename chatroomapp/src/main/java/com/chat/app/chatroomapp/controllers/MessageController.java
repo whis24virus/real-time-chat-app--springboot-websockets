@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MessageController {
     @SendTo("/topic/return-to") // subscriber url to get messages
-    @MessageMapping("message") // client will send message to this url
+    @MessageMapping("/message") // client will send message to this url
     public Message getContent(@RequestBody Message message){
-        try{
-            //processing
-            Thread.sleep(10);
-        }
-        catch (InterruptedException e){
-            e.printStackTrace();
-        }
+//        try{
+//            //processing
+//            Thread.sleep(10);
+//        }
+//        catch (InterruptedException e){
+//            e.printStackTrace();
+//        }
         return message;
     }
 

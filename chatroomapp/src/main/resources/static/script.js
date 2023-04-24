@@ -35,13 +35,13 @@ function showMessage(message){
 }
 
 
-$(document).ready(e=>{
+$(document).ready((e)=>{
 
     $("#login").click(()=>{
 
         let name = $("#name-value").val()
         localStorage.setItem("name", name)
-        $("#name-title").html(`Welcome, <b>${name}</b>`)
+        $("#name-title").html(`Welcome, <b> ${name} </b>`)
         connect();
     })
 
@@ -55,8 +55,8 @@ $(document).ready(e=>{
         localStorage.removeItem("name")
         if(stompClient !== null){
             stompClient.disconnect()
-            $("#name-from").removeClass("d-none")
-            $("#chat-room").addClass("d-none")
+            $("#name-from").removeClass('d-none')
+            $("#chat-room").addClass('d-none')
             console.log(stompClient)
 
         }
